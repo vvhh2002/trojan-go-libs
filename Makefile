@@ -3,7 +3,8 @@ IMPORT_PATH= \
 	github.com/trojan-gfw/igniter-go-libs/clash \
 	github.com/trojan-gfw/igniter-go-libs/tun2socks \
 	github.com/trojan-gfw/igniter-go-libs/freeport \
-	github.com/trojan-gfw/igniter-go-libs/util
+	github.com/trojan-gfw/igniter-go-libs/util \
+	github.com/trojan-gfw/igniter-go-libs/trojan
 
 # pass a single dollar sign to shell
 CURRENT_GOPATH="$(shell echo $$GOPATH)"
