@@ -11,7 +11,7 @@ require (
 	github.com/djherbis/buffer v1.1.0 // indirect
 	github.com/djherbis/nio v2.0.3+incompatible // indirect
 	github.com/eycorsican/go-tun2socks v0.0.0
-	github.com/p4gefau1t/trojan-go v0.1.0
+	github.com/p4gefau1t/trojan-go v0.1.4
 	github.com/sirupsen/logrus v1.4.2
 	github.com/songgao/water v0.0.0-20190725173103-fd331bda3f4b
 	github.com/v2pro/plz v0.0.0-20180227161703-2d49b86ea382 // indirect
