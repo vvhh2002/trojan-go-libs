@@ -41,12 +41,12 @@ func RunClient(filename string) {
 }
 
 func StopClient() {
-	log.Infof("Stopping client")
+	log.Info("Stopping client")
 	if client != nil {
 		client.Close()
 		client = nil
 	}
-	log.Infof("Stopped")
+	log.Info("Stopped")
 }
 
 // SetLoglevel set trojan log level
