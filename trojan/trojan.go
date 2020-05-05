@@ -9,13 +9,14 @@ import (
 	"github.com/p4gefau1t/trojan-go/log"
 	_ "github.com/p4gefau1t/trojan-go/log/simplelog"
 	"github.com/p4gefau1t/trojan-go/proxy"
-	_ "github.com/p4gefau1t/trojan-go/proxy"
 	_ "github.com/p4gefau1t/trojan-go/proxy/client"
+	_ "github.com/p4gefau1t/trojan-go/stat/memory"
 )
 
 var client common.Runnable
 
 func RunClient(filename string) {
+	log.Info("Trojan-Go core version", common.Version)
 	if client != nil {
 		log.Error("Client is already running")
 		return
