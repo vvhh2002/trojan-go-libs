@@ -1,22 +1,22 @@
 package trojan
 
 import (
+	"github.com/p4gefau1t/trojan-go/constant"
 	"io/ioutil"
 	"strings"
 
 	"github.com/p4gefau1t/trojan-go/common"
-	"github.com/p4gefau1t/trojan-go/conf"
 	"github.com/p4gefau1t/trojan-go/log"
 	_ "github.com/p4gefau1t/trojan-go/log/simplelog"
 	"github.com/p4gefau1t/trojan-go/proxy"
 	_ "github.com/p4gefau1t/trojan-go/proxy/client"
-	_ "github.com/p4gefau1t/trojan-go/stat/memory"
+	//_ "github.com/p4gefau1t/trojan-go/stat/memory"
 )
 
 var client common.Runnable
 
 func RunClient(filename string) {
-	log.Info("Trojan-Go core version", common.Version)
+	log.Info("Trojan-Go core version", constant.Version)
 	if client != nil {
 		log.Error("Client is already running")
 		return
@@ -27,12 +27,13 @@ func RunClient(filename string) {
 		log.Error("failed to read file", err)
 	}
 	log.Info("config:", string(configBytes))
-	config, err := conf.ParseJSON(configBytes)
-	if err != nil {
-		log.Error("error", err)
-		return
-	}
-	client, err = proxy.NewProxy(config)
+	//config, err := parseJSON(configBytes)
+	//if err != nil {
+	//	log.Error("error", err)
+	//	return
+	//}
+	//client, err = proxy.NewProxy(config)
+	client, err = proxy.NewProxyFromConfigData(configBytes, true)
 	if err != nil {
 		log.Error("error", err)
 		return
